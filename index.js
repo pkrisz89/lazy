@@ -1,5 +1,10 @@
 module.exports = class Lazy {
-  constructor() {}
+  constructor() {
+    this.args = new Map();
+  }
 
-  add(...args) {}
+  add(fn, ...args) {
+    this.args.set(fn, [...args]);
+    return this;
+  }
 };
